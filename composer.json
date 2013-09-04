@@ -1,0 +1,19 @@
+{
+    "name": "buggymanhq/buggyman",
+    "description": "Buggyman API library",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Evgeny Shpilevsky",
+            "email": "evgeny@shpilevsky.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Buggyman": "src/"
+        }
+    }
+}
