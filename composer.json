@@ -2,6 +2,7 @@
     "name": "buggymanhq/buggyman",
     "description": "Buggyman API library",
     "minimum-stability": "stable",
+    "license": "MIT",
     "authors": [
         {
             "name": "Evgeny Shpilevsky",
