@@ -103,7 +103,7 @@ class Buggyman
     {
         $data = json_encode($reports);
 
-        $curl = curl_init('http://buggyman.dev.infonet.by/api/report-row?token=' . self::getToken());
+        $curl = curl_init('http://api.buggyman.io/v1/report?token=' . self::getToken());
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
