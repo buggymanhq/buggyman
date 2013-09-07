@@ -59,7 +59,7 @@ class Buggyman
     public static function init()
     {
         if (!self::$instance) {
-            self::$instance = new static();
+            self::$instance = new self();
             set_exception_handler(array(__CLASS__, 'reportException'));
             set_error_handler(array(__CLASS__, 'reportError'), self::getErrorLevel());
             register_shutdown_function(array(__CLASS__, 'shutdown'));
@@ -98,6 +98,7 @@ class Buggyman
 
     /**
      * @param $reports
+     * @return string
      */
     public static function sendReport($reports)
     {
@@ -108,7 +109,7 @@ class Buggyman
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-        curl_exec($curl);
+        return curl_exec($curl);
     }
 
     /**

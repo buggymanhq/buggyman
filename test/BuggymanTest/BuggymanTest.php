@@ -27,5 +27,20 @@ class BuggymanTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(__DIR__, $array['root']);
     }
 
+
+    public function testSendReport()
+    {
+        $report = Buggyman::exceptionToArray(new \RuntimeException('Test exception'));
+        $report['meta'] = array(
+            'test' => 'hi!'
+        );
+        $report['root'] = dirname(__DIR__);
+
+        Buggyman::setToken('2aepGEj3Jt6YhkKKzvNdgtXW8o7cDAnkZwWNO6kl');
+        $result = Buggyman::sendReport(array($report));
+        $this->assertEquals('{"status":"1"}', $result);
+    }
+
+
 }
  
