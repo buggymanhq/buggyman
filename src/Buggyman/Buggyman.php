@@ -166,7 +166,7 @@ class Buggyman
 
         $result = array();
         foreach ($trace as $index => $line) {
-            if (is_array($line['args'])) {
+            if (isset($line['args']) && is_array($line['args'])) {
                 $params = static::paramsToString($line['args']);
             } else {
                 $params = '';
